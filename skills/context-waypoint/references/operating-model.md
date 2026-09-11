@@ -14,6 +14,29 @@ When initializing an existing project, derive durable context only from verifiab
 
 Do not invent historical rationale, rejected alternatives, user intent, formal acceptance, dates, or authorship. Seeing that verified code uses a technology can support “the verified current implementation uses it”; it does not establish why it was chosen. When rationale, status, or history is unknown, omit it or record only the verified state, mark uncertainty where useful, and ask when the gap materially affects the work.
 
+## Existing-project bootstrap
+
+For an existing project with suitable documentation, use a selective documentation bootstrap:
+
+1. Determine the project root and inspect repository rules.
+2. Discover likely high-value sources that actually exist: a primary overview, current status, approved specifications, architecture or decision records, plans, policies, operational guidance, or existing authoritative project records.
+3. Read the entry points and follow only references relevant to current state, milestones, durable constraints, explicit decisions, or unresolved work.
+4. Extract concise, verified continuity into `.context-waypoint/`; inspect code, tests, configuration, or further documentation only to verify an implementation-sensitive claim or resolve an important discrepancy.
+
+Do not read every Markdown file or perform broad repository archaeology merely to fill the store. Documentation is a high-value starting point, not automatic current truth; resolve material discrepancies using the source hierarchy below.
+
+An initial store may contain only `CURRENT.md` and `CONSTRAINTS.md`, perhaps a small number of explicitly supported decisions, an initialization session that records material bootstrap evidence or discrepancies, or one active handoff. Empty record directories are valid. Do not reconstruct historical handoffs, synthetic session histories, or an archive from existing documents merely because those directories exist.
+
+## Reference, don't duplicate
+
+Context Waypoint compresses project knowledge; it is not a second copy of project documentation. For a large policy, specification, architecture description, or operational guide, record only the durable fact that affects future work and a simple source path or link when useful. Keep the full detail in the authoritative document.
+
+For example, a constraint can state “Production deployment requires explicit user authorization” and point to the repository policy instead of reproducing that policy. Keep `CONSTRAINTS.md` small enough for normal minimal-context loading.
+
+## Store project state, not agent/tool state
+
+Store durable project conclusions, not temporary inspection conditions such as which model, index, MCP connection, or navigation tool was available. Session records may include useful concise agent/environment provenance, but incidental tool output or operational status does not belong in durable project context without a project-specific reason.
+
 ## Staleness and conflicts
 
 Waypoint records are evidence, not unquestionable truth. Resolve conflicts using this order:

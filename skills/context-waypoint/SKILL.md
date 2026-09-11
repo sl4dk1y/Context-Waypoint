@@ -21,7 +21,15 @@ From the current project root, copy `templates/.context-waypoint` from the insta
 
 The directory is Git-friendly and may normally be tracked with the project. Do not add it to `.gitignore` automatically or perform Git writes; the user and repository policy decide what is committed.
 
-When initializing an existing project, record only verifiable current facts and context explicitly supplied by the user. Do not infer historical rationale, rejected alternatives, acceptance status, dates, authorship, or user intent from current code alone. If a material fact is uncertain, record the uncertainty or ask; prefer omission to false certainty.
+### Existing-project bootstrap
+
+For an existing project, inspect repository rules first, then selectively discover high-value authoritative documentation: the primary overview, current status, approved specifications, architecture/decision records, plans, or policies that actually exist. Follow only relevant references; do not read every Markdown file. Inspect code, tests, configuration, or additional documents only to verify a current claim or resolve an important discrepancy.
+
+Extract concise, durable, verified project facts into `CURRENT.md` and `CONSTRAINTS.md`, and reference the authoritative source instead of copying it. Leave `decisions/`, `handoffs/`, `sessions/`, and `archive/` empty when no appropriate record exists. Create a historical decision only when an authoritative source explicitly supports it and it remains useful; current implementation alone does not establish its rationale, acceptance, date, authorship, or alternatives.
+
+Do not preserve transient agent or tool state. Store the material project conclusion instead. A session may name an agent/environment when useful, but is not a record of incidental tool status.
+
+When initializing an existing project, record only verifiable current facts and context explicitly supplied by the user. If a material fact is uncertain, record the uncertainty or ask; prefer omission to false certainty.
 
 ## Read narrowly
 
@@ -35,12 +43,12 @@ Stop when the task has enough context. This protects the token budget and keeps 
 
 ## Update the right record
 
-- Rewrite and prune `CURRENT.md` when the objective, current state, blockers, next action, active decision, or active handoff changes. It is not a changelog.
+- Rewrite and prune `CURRENT.md` when the objective, current state, blockers, next action, active decision, or active handoff changes. Its objective is the current working task, investigation, milestone, readiness goal, or operational objective; use the verified project/milestone objective only when no narrower work is active. It is not a changelog.
 - Add a constraint only when it is a durable guardrail, not a temporary TODO.
 - Add one decision record for a material proposed, accepted, rejected, or superseded choice. Record rationale and alternatives only when actually known; link a replacement when applicable.
-- Write a session summary after meaningful work: conclusions, completed work, verification, unresolved issues, and follow-up. Never include private reasoning.
-- Write a handoff before pausing materially unfinished work. `CURRENT.md` should link to the active handoff rather than duplicate it. Clear that link when it is no longer active.
-- Move cold historical records to `archive/` rather than loading them routinely.
+- Write a session summary only after meaningful work: conclusions, completed work, verification, unresolved issues, and follow-up. Never include private reasoning or create one for every conversation.
+- Write a handoff only before pausing materially unfinished work. `CURRENT.md` should link to the active handoff rather than duplicate it. Clear that link when it is no longer active.
+- Move cold historical records to `archive/` rather than loading them routinely; do not populate it merely because it exists.
 
 Use this storage test: record something only if forgetting it would materially increase the chance of a future wrong decision or repeated work.
 

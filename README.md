@@ -52,7 +52,7 @@ The installed skill at `~/.agents/skills/context-waypoint/` is self-contained: i
 cp -R ~/.agents/skills/context-waypoint/templates/.context-waypoint .context-waypoint
 ```
 
-Then replace the placeholders in `CURRENT.md` and `CONSTRAINTS.md`. Add a decision, session, or handoff only when it gives a future agent material information it would otherwise need to rediscover. Record skeletons are in `~/.agents/skills/context-waypoint/templates/records/`.
+Then replace the placeholders in `CURRENT.md` and `CONSTRAINTS.md`. In an existing project, first inspect repository rules and selectively read high-value authoritative documentation before broader code inspection. Extract only concise, verified continuity facts and reference the original source rather than copying it. Add a decision, session, or handoff only when it gives a future agent material information it would otherwise need to rediscover. Record skeletons are in `~/.agents/skills/context-waypoint/templates/records/`.
 
 Do not create `.context-waypoint/` in the installed skill directory, at `~/.context-waypoint/`, beside the project, or as a shared store for multiple projects. If the project root is ambiguous, establish it or ask before initializing rather than guessing across unrelated directories.
 
