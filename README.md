@@ -39,7 +39,19 @@ The packaged [schema reference](skills/context-waypoint/references/schema.md) de
 
 ## Installation and initialization
 
-Context Waypoint follows an Agent Skills-style portable structure. Install the reusable skill once; each project then gets its own isolated `.context-waypoint/` directory. The recommended shared installation example is:
+Context Waypoint follows an Agent Skills-style portable structure. Install the reusable skill once; each project then gets its own isolated `.context-waypoint/` directory.
+
+### Recommended: global installation with `npx skills`
+
+Install the skill globally with the Skills CLI:
+
+```sh
+npx skills add sl4dk1y/Context-Waypoint -g
+```
+
+The `-g` (`--global`) flag installs the skill globally, making it available across projects in supported agent environments. This repository exposes the skill at `skills/context-waypoint/SKILL.md`, which is the structure discovered by the CLI. The reusable skill is global; project-specific continuity data remains separate at `<project-root>/.context-waypoint/`.
+
+### Manual installation alternative
 
 ```sh
 mkdir -p ~/.agents/skills
